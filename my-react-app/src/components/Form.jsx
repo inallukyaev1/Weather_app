@@ -1,8 +1,8 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import searchImg from '../assets/search.svg';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import searchImg from "../assets/search.svg";
 
-export function Form({ addRequest }) {
+export function Form({ getCity }) {
   const dispatch = useDispatch();
   const cityName = useSelector((state) => state.inputValue);
   const resetForm = (e) => {
@@ -10,7 +10,7 @@ export function Form({ addRequest }) {
   };
 
   const getCityNameHandler = (e) => {
-    dispatch({ type: 'addInputValue', payload: e.target.value });
+    dispatch({ type: "addInputValue", payload: e.target.value });
   };
 
   return (
@@ -24,7 +24,7 @@ export function Form({ addRequest }) {
       <button
         className="search-btn"
         type="submit"
-        onClick={() => addRequest(cityName)}
+        onClick={() => getCity(cityName)}
       >
         <img src={searchImg} alt="" />
       </button>

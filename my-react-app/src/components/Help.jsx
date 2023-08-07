@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export function Help() {
   return (
@@ -9,7 +10,7 @@ export function Help() {
       </span>
       <div>
         <button>
-          <a href="/">Скрыть </a>
+          <Link to="/">Скрыть </Link>
         </button>
       </div>
     </div>

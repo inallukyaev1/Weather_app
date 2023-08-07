@@ -1,5 +1,5 @@
-import { format } from 'date-fns';
+import { format } from "date-fns";
 
-export function convertTime(value) {
-  return format(value * 1000, 'kk:mm');
+export function timeConverter(value) {
+  return format(value * 1000, "kk:mm");
 }

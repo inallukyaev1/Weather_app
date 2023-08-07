@@ -1,21 +1,29 @@
-import closeTask from '../assets/close.svg';
-import { ELEMENT } from './methodsJs/elements';
-import { setLocalStorageItem } from './methodsJs/LocalSet';
-import { useDispatch, useSelector } from 'react-redux';
+import closeTask from "../assets/close.svg";
+import { ELEMENT } from "./methodsJs/elements";
+import { setLocalStorageItem } from "./methodsJs/LocalSet";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-export function CityList({ addRequest }) {
+export const deleteCity = (listCity, name) => {
+  const filterCitie = listCity.filter((item) => item.cityName !== name);
+  return filterCitie;
+};
+
+export function CityList({ getCity }) {
   const dispatch = useDispatch();
   const allCitiesFavorite = useSelector((state) => state.allCities);
-  const deleteCity = (listCity, name) => {
-    const filterCitie = listCity.filter((item) => item.cityName !== name);
-    dispatch({ type: 'deleteCitiesInFavorite', payload: filterCitie });
-    setLocalStorageItem(ELEMENT.selectedCities, filterCitie);
+
+  const removeFromFavoritesHandler = (listCity, name) => {
+    const removedCity = deleteCity(listCity, name);
+    dispatch({ type: "deleteCitiesInFavorite", payload: removedCity });
+    setLocalStorageItem(ELEMENT.selectedCities, removedCity);
   };
+
   return (
     <div className="weather_locations">
       <div className="added_locations">
         <button>
-          <a href="/Help">Help</a>{' '}
+          <Link to="/Help">Help</Link>{" "}
         </button>
         <div className="locations_text">Added Locations:</div>
 
@@ -25,7 +33,7 @@ export function CityList({ addRequest }) {
             : allCitiesFavorite.map((item) => {
                 return (
                   <li key={item.id}>
-                    <span onClick={() => addRequest(item.cityName)}>
+                    <span onClick={() => getCity(item.cityName)}>
                       {item.cityName}
                     </span>
                     <img
@@ -33,7 +41,10 @@ export function CityList({ addRequest }) {
                       alt=""
                       className="close-city"
                       onClick={() =>
-                        deleteCity(allCitiesFavorite, item.cityName)
+                        removeFromFavoritesHandler(
+                          allCitiesFavorite,
+                          item.cityName
+                        )
                       }
                     />
                   </li>

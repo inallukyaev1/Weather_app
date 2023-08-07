@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const items = [
-  { title: 'Now', className: 'tab-item' },
-  { title: 'Details', className: 'tab-item' },
-  { title: 'Forecast', className: 'tab-item' },
+  { path: "", title: "Now" },
+  { path: "Details", title: "Details" },
 ];
 export function ChooseSection() {
   const [active, setActive] = useState();
@@ -11,18 +12,21 @@ export function ChooseSection() {
     setActive(+e.target.dataset.index);
   };
 
+  const currentPathname = useLocation();
+  const slugCurrent = currentPathname.pathname.split("/")[1];
+
   return (
     <nav className="tabs__items" onClick={ChangeColorTabs}>
       {items.map((item, i) => {
         return (
-          <a
+          <Link
             key={i}
-            href={`#tab_${i + 1}`}
+            to={`${item.path}`}
             data-index={i}
-            className={`tab-item ${i === active ? 'active' : ''}`}
+            className={`tab-item ${slugCurrent === item.path ? "active" : ""}`}
           >
             {item.title}
-          </a>
+          </Link>
         );
       })}
     </nav>
