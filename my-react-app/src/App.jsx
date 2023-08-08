@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     if (getLocalStorageItem("currentCity")) {
       dispatch({
-        type: "addAllCitiesFromLocalStorage",
+        type: "addCityToFavoritesFromLocalStorage",
         payload: getLocalStorageItem(ELEMENT.selectedCities) || [],
       });
       getCity(getLocalStorageItem("currentCity")?.cityName);

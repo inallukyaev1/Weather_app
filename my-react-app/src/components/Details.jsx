@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export function Details() {
   const cityCurrent = useSelector((state) => state.currentCity);

@@ -15,7 +15,7 @@ export function CityList({ getCity }) {
 
   const removeFromFavoritesHandler = (listCity, name) => {
     const removedCity = deleteCity(listCity, name);
-    dispatch({ type: "deleteCitiesInFavorite", payload: removedCity });
+    dispatch({ type: "removeCityFromFavorites", payload: removedCity });
     setLocalStorageItem(ELEMENT.selectedCities, removedCity);
   };
 
@@ -23,7 +23,7 @@ export function CityList({ getCity }) {
     <div className="weather_locations">
       <div className="added_locations">
         <button>
-          <Link to="/Help">Help</Link>{" "}
+          <Link to="/Help">info</Link>{" "}
         </button>
         <div className="locations_text">Added Locations:</div>
 

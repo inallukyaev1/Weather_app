@@ -1,4 +1,4 @@
-import { LoveHeart } from "../assets/love_heart.jsx";
+import { HeartIcon } from "../assets/heart_icon.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { setLocalStorageItem } from "../components/methodsJs/LocalSet";
 import { ELEMENT } from "../components/methodsJs/elements";
@@ -17,11 +17,11 @@ export function Widgets() {
     );
     if (index === -1) {
       setLocalStorageItem(ELEMENT.selectedCities, [...cityFav, cityCurrent]);
-      dispatch({ type: "addAllCities", payload: [cityCurrent] });
+      dispatch({ type: "addCityToFavorites", payload: [cityCurrent] });
       setIsFavorite("red");
     } else {
       const removedCity = deleteCity(allCitiesFavorite, cityCurrent.cityName);
-      dispatch({ type: "deleteCitiesInFavorite", payload: removedCity });
+      dispatch({ type: "removeCityFromFavorites", payload: removedCity });
       setLocalStorageItem(ELEMENT.selectedCities, removedCity);
       setIsFavorite("none");
     }
@@ -55,7 +55,7 @@ export function Widgets() {
           </div>
           <div className="favorite">
             <button className="favorite_btn" onClick={addCityFavorite}>
-              <LoveHeart fill={isFavorite}></LoveHeart>
+              <HeartIcon fill={isFavorite}></HeartIcon>
             </button>
           </div>
         </div>

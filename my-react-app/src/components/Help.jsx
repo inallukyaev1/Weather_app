@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 export function Help() {
   return (
-    <div>
+    <div className="Help-block">
       <span>
-        Это тестовая программа погоды. Вводи название города и нажми на
-        поисковую лупу . Город будет высвечен в течение нескольких секунд
+        Hi there! In this weather app you can check: weather forecast for now
+        and all day
       </span>
       <div>
-        <button>
-          <Link to="/">Скрыть </Link>
+        <button className="help_btn">
+          <Link to="/">Hide</Link>
         </button>
       </div>
     </div>

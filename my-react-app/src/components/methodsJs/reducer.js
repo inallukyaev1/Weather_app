@@ -1,17 +1,17 @@
-import { createStore } from 'redux';
-import { defaultState } from './elements';
+import { createStore } from "redux";
+import { defaultState } from "./elements";
 
 export const reducer = (state = defaultState, action) => {
   switch (action.type) {
-    case 'addCurrentCity':
+    case "addCurrentCity":
       return { ...state, currentCity: action.payload };
-    case 'addInputValue':
+    case "addInputValue":
       return { ...state, inputValue: action.payload };
-    case 'addAllCities':
+    case "addCityToFavorites":
       return { ...state, allCities: [...state.allCities, ...action.payload] };
-    case 'addAllCitiesFromLocalStorage':
+    case "addCityToFavoritesFromLocalStorage":
       return { ...state, allCities: [...action.payload] };
-    case 'deleteCitiesInFavorite':
+    case "removeCityFromFavorites":
       return { ...state, allCities: action.payload };
     default:
       return state;

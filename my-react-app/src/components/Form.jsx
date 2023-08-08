@@ -4,7 +4,7 @@ import searchImg from "../assets/search.svg";
 
 export function Form({ getCity }) {
   const dispatch = useDispatch();
-  const cityName = useSelector((state) => state.inputValue);
+  const nameOfCity = useSelector((state) => state.inputValue);
   const resetForm = (e) => {
     e.preventDefault();
   };
@@ -19,12 +19,12 @@ export function Form({ getCity }) {
         type="text"
         className="input_User"
         onChange={getCityNameHandler}
-        value={cityName}
+        value={nameOfCity}
       />
       <button
         className="search-btn"
         type="submit"
-        onClick={() => getCity(cityName)}
+        onClick={() => getCity(nameOfCity)}
       >
         <img src={searchImg} alt="" />
       </button>
