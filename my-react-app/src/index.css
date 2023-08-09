@@ -15,6 +15,8 @@ li {
   list-style-type: none;
 }
 a {
+  padding: 5px;
+  display: inline-block;
   text-decoration: none;
   color: inherit;
 }
@@ -26,16 +28,7 @@ a {
 form {
   position: relative;
 }
-.search-btn {
-  cursor: pointer;
-  position: absolute;
-  border: none;
-  background-color: white;
-  top: 0;
-  right: 0;
-  transform: translate(-50%, 50%);
-  background-color: #a0d2eb;
-}
+
 .weather {
   width: 600px;
   margin: 0 auto;
@@ -53,16 +46,6 @@ input {
   background-color: #a0d2eb;
 }
 
-.tab-item.active {
-  background-color: #d35353;
-  color: white;
-}
-
-.weather_block {
-  display: block;
-  padding-left: 12px;
-}
-
 .weather_widgets {
   height: 399px;
   width: 300px;
@@ -76,76 +59,6 @@ input {
   justify-content: space-between;
 }
 
-.weather_locations {
-  width: 300px;
-  height: 390px;
-  overflow-y: auto;
-}
-
-.weather_widgets-degrees {
-  font-weight: 400;
-  font-size: 70px;
-  line-height: 82px;
-  margin-top: 20px;
-}
-
-.weather_widgets-img {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.city_selected {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 98px;
-  margin-bottom: 17px;
-  padding-right: 26px;
-}
-
-.locations_text {
-  margin-top: 33px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid white;
-  padding-left: 18px;
-}
-.location-list {
-  margin-top: 35px;
-}
-
-.location-list li {
-  margin-left: 18px;
-  margin-bottom: 12px;
-  margin-right: 13px;
-}
-
-.favorite_btn {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  transition: 0.5s all;
-}
-
-.tabs__items {
-  font-size: 18px;
-  line-height: 21px;
-  width: 299px;
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid white;
-}
-
-.tab-item {
-  width: 100%;
-  text-align: center;
-  padding: 12px 0 12px 0;
-  cursor: pointer;
-}
-
-.close-city {
-  display: block;
-  cursor: pointer;
-}
-
 .tab-link {
   width: 100%;
 }
@@ -155,26 +68,9 @@ input {
   margin: 0;
 }
 
-.images_current_weather {
-  width: 150px;
-  height: 150px;
-}
-
-.tab-item + .tab-item {
-  border-left: 1px solid white;
-}
-
-.name__current_city {
-  margin-top: 33px;
-}
-
 .city-properties {
   margin-top: 42px;
   margin-bottom: 46px;
-}
-
-.city-properties_item {
-  margin-bottom: 16px;
 }
 
 .current__item {
@@ -204,14 +100,6 @@ input {
   text-align: center;
 }
 
-#tab_3 {
-  overflow-y: auto;
-}
-
-.tab3__name {
-  margin-bottom: 7px;
-}
-
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -233,27 +121,8 @@ li span {
   cursor: pointer;
 }
 
-.added_locations button,
-.help_btn {
-  border: none;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 15px;
-  text-transform: uppercase;
-
-  transition: 0.6s all;
-  color: black;
-  cursor: pointer;
-  background-color: white;
-}
-
 .added_locations button:hover,
 .help_btn:hover {
   box-shadow: -1px 2px 24px -8px rgba(0, 0, 0, 1);
   -webkit-box-shadow: -1px 2px 24px -8px rgba(0, 0, 0, 1);
-}
-
-.favorite_btn:hover {
-  filter: drop-shadow(1px -1px 6px #000);
-  background-color: transparent;
 }

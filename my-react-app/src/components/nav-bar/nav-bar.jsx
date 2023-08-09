@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./nav-bar.css";
 
 const items = [
   { path: "", title: "Now" },
-  { path: "Details", title: "Details" },
+  { path: "details", title: "Details" },
 ];
-export function ChooseSection() {
+export function NavBar() {
   const [active, setActive] = useState();
   const ChangeColorTabs = (e) => {
     setActive(+e.target.dataset.index);

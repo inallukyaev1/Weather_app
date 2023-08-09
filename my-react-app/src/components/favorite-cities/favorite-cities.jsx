@@ -1,15 +1,16 @@
-import closeTask from "../assets/close.svg";
-import { ELEMENT } from "./methodsJs/elements";
-import { setLocalStorageItem } from "./methodsJs/LocalSet";
+import closeTask from "../../assets/close.svg";
+import { ELEMENT } from "../methodsJs/elements";
+import { setLocalStorageItem } from "../methodsJs/LocalSet";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import "./favorite-cities.css";
 
 export const deleteCity = (listCity, name) => {
   const filterCitie = listCity.filter((item) => item.cityName !== name);
   return filterCitie;
 };
 
-export function CityList({ getCity }) {
+export function FavoriteCities({ getCity }) {
   const dispatch = useDispatch();
   const allCitiesFavorite = useSelector((state) => state.allCities);
 
@@ -23,7 +24,7 @@ export function CityList({ getCity }) {
     <div className="weather_locations">
       <div className="added_locations">
         <button>
-          <Link to="/Help">info</Link>{" "}
+          <Link to="/help">info</Link>{" "}
         </button>
         <div className="locations_text">Added Locations:</div>
 
@@ -39,7 +40,7 @@ export function CityList({ getCity }) {
                     <img
                       src={closeTask}
                       alt=""
-                      className="close-city"
+                      className="delete-city"
                       onClick={() =>
                         removeFromFavoritesHandler(
                           allCitiesFavorite,

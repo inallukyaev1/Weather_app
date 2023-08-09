@@ -1,0 +1,44 @@
+.weather_locations {
+  width: 300px;
+  height: 390px;
+  overflow-y: auto;
+}
+.added_locations button,
+.help_btn {
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: 0.6s all;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+}
+
+.added_locations button:hover,
+.help_btn:hover {
+  box-shadow: -1px 2px 24px -8px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: -1px 2px 24px -8px rgba(0, 0, 0, 1);
+}
+
+.locations_text {
+  margin-top: 33px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid white;
+  padding-left: 18px;
+}
+
+.location-list {
+  margin-top: 35px;
+}
+
+.location-list li {
+  margin-left: 18px;
+  margin-bottom: 12px;
+  margin-right: 13px;
+}
+
+.delete-city {
+  display: block;
+  cursor: pointer;
+}

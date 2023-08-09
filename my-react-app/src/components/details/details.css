@@ -1,0 +1,12 @@
+.weather_block {
+  display: block;
+  padding-left: 12px;
+}
+
+.name_current_city {
+  margin-top: 33px;
+}
+
+.city-properties_item {
+  margin-bottom: 16px;
+}

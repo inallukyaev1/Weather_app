@@ -1,8 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import searchImg from "../assets/search.svg";
+import searchImg from "../../assets/search.svg";
+import "./search-form.css";
 
-export function Form({ getCity }) {
+export function SearchForm({ getCity }) {
   const dispatch = useDispatch();
   const nameOfCity = useSelector((state) => state.inputValue);
   const resetForm = (e) => {
@@ -17,7 +18,7 @@ export function Form({ getCity }) {
     <form onSubmit={resetForm}>
       <input
         type="text"
-        className="input_User"
+        className="input-name-City"
         onChange={getCityNameHandler}
         value={nameOfCity}
       />

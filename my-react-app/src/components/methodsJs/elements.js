@@ -1,11 +1,11 @@
 export const ELEMENT = {
-  defaultValue: "Нальчик",
+  defaultCity: "Нальчик",
   currentCity: "currentCity",
   selectedCities: "selectedCities",
 };
 
 export const defaultState = {
-  currentCity: ELEMENT.defaultValue,
+  currentCity: ELEMENT.defaultCity,
   inputValue: "",
   allCities: [],
 };

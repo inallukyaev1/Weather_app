@@ -1,0 +1,34 @@
+.weather_widgets-degrees {
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 82px;
+  margin-top: 20px;
+}
+
+.weather_widgets-img {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.images_current_weather {
+  width: 150px;
+  height: 150px;
+}
+
+.city_selected {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 98px;
+  margin-bottom: 17px;
+  padding-right: 26px;
+}
+.favorite_btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.favorite_btn:hover {
+  filter: drop-shadow(1px -1px 6px #000);
+  background-color: transparent;
+}

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { Form } from "./components/Form";
-import { ChooseSection } from "./components/ChooseSection";
-import { CityList } from "./components/CityList";
+import { SearchForm } from "./components/search-form/search-form";
+import { NavBar } from "./components/nav-bar/nav-bar";
+import { FavoriteCities } from "./components/favorite-cities/favorite-cities";
 import { requestCity } from "./components/methodsJs/requestCity";
 import { ELEMENT } from "./components/methodsJs/elements";
 import { timeConverter } from "./components/methodsJs/converterTime";
@@ -25,7 +25,7 @@ function App() {
       });
       getCity(getLocalStorageItem("currentCity")?.cityName);
     } else {
-      getCity(ELEMENT.defaultValue);
+      getCity(ELEMENT.defaultCity);
     }
   }, []);
 
@@ -54,13 +54,13 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="weather">
-          <Form getCity={getCity} />
+          <SearchForm getCity={getCity} />
           <div className="weather_wrapper">
             <div className="weather_widgets">
               <Outlet />
-              <ChooseSection />
+              <NavBar />
             </div>
-            <CityList getCity={getCity} />
+            <FavoriteCities getCity={getCity} />
           </div>
         </div>
       </div>

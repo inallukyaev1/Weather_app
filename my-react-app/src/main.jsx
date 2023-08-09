@@ -4,9 +4,9 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./components/methodsJs/reducer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Help } from "./components/Help";
-import { Widgets } from "./components/Widgets";
-import { Details } from "./components/Details";
+import { Help } from "./components/help/help";
+import { Widgets } from "./components/widgets/widgets";
+import { Details } from "./components/details/details";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -16,10 +16,10 @@ const router = createBrowserRouter([
     children: [
       { index: true, path: "/", element: <Widgets /> },
       {
-        path: "/Help",
+        path: "/help",
         element: <Help></Help>,
       },
-      { path: "/Details", element: <Details /> },
+      { path: "/details", element: <Details /> },
     ],
   },
 ]);

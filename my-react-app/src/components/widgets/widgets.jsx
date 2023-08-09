@@ -1,9 +1,10 @@
-import { HeartIcon } from "../assets/heart_icon.jsx";
+import { HeartIcon } from "../svg-components/heart-icon.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { setLocalStorageItem } from "../components/methodsJs/LocalSet";
-import { ELEMENT } from "../components/methodsJs/elements";
+import { setLocalStorageItem } from "../methodsJs/LocalSet.js";
+import { ELEMENT } from "../methodsJs/elements.js";
 import { useEffect, useState } from "react";
-import { deleteCity } from "./CityList.jsx";
+import { deleteCity } from "../favorite-cities/favorite-cities.jsx";
+import "./widgets.css";
 
 export function Widgets() {
   const allCitiesFavorite = useSelector((state) => state.allCities);
@@ -37,7 +38,7 @@ export function Widgets() {
   }, [cityCurrent, allCitiesFavorite]);
 
   return (
-    <div id="tab_1" className="weather_block">
+    <div className="weather_block">
       <div className="weather_widgets-now">
         <div className="weather_widgets-degrees">
           {`${Math.round(cityCurrent?.cityTemp)}`}&deg;
@@ -50,10 +51,10 @@ export function Widgets() {
           />
         </div>
         <div className="city_selected">
-          <div className="city_now">
+          <div className="city-current-block">
             <span className="name__current_city">{cityCurrent?.cityName}</span>
           </div>
-          <div className="favorite">
+          <div className="favorites-block">
             <button className="favorite_btn" onClick={addCityFavorite}>
               <HeartIcon fill={isFavorite}></HeartIcon>
             </button>

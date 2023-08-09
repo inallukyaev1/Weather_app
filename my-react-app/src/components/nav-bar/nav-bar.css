@@ -1,0 +1,23 @@
+.tabs__items {
+  font-size: 18px;
+  line-height: 21px;
+  width: 299px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid white;
+}
+.tab-item {
+  width: 100%;
+  text-align: center;
+  padding: 12px 0 12px 0;
+  cursor: pointer;
+}
+
+.tab-item + .tab-item {
+  border-left: 1px solid white;
+}
+
+.tab-item.active {
+  background-color: #d35353;
+  color: white;
+}

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./help.css";
 
 export function Help() {
   return (
-    <div className="Help-block">
+    <div className="help-block">
       <span>
         Hi there! In this weather app you can check: weather forecast for now
         and all day
