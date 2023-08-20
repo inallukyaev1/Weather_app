@@ -8,7 +8,6 @@
   - favorites: you can add or remove city from favorites, click on the city and see the forecast in it;
 - After reloading the page and closing the browser in the app keeps forecast of the last city you were looking for, as well as favorites cities.
 
-<br>
 
 ## Used technologies
 
